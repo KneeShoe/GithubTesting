@@ -1,10 +1,11 @@
 name: Automerge
 
 on:
-  workflow_dispatch:
-#   schedule:
-    # You can setup schedule here
-#     - cron: '0 0 * * *'
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
 
 env:
   # replace "github_username" with your GitHub username
@@ -22,9 +23,11 @@ env:
   MASTER_BRANCH: master
 
 jobs:
+  if_merged:
+    runs-on: ubuntu-latest
   merge:
     runs-on: ubuntu-latest
-
+    if: github.event.pull_request.merged == true
     steps:
     - name: Merge with master
       run: |
