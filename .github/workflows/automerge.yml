@@ -16,7 +16,7 @@ env:
   MY_BRANCH: Staging
 
   # replace it with the path to master repo
-  MASTER_REPO: https://github.com/KneeShoe/GithubTesting/master
+  MASTER_REPO: https://github.com/KneeShoe/GithubTesting.git
 
   # replace "master" with your master branch name
   MASTER_BRANCH: master
