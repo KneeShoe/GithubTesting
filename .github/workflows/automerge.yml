@@ -23,11 +23,8 @@ env:
   MASTER_BRANCH: master
 
 jobs:
-  if_merged:
-    runs-on: ubuntu-latest
   merge:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     steps:
     - name: Merge with master
       run: |
